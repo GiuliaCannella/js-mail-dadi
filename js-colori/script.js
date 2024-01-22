@@ -28,11 +28,8 @@ btn.addEventListener("click", function () {
   if (coloreUtente != "" && coloreInput != null) {
     for (let i = 0; i < colori.length; i++) {
       const colore = colori[i];
-      console.warn(colore);
 
       if (coloreUtente == colore) {
-        console.log(coloreUtente, "coloreUtente");
-        console.log(colore, "COLORE");
         isPresente = true;
       }
     }
@@ -40,17 +37,19 @@ btn.addEventListener("click", function () {
     if (isPresente) {
       p.innerText = "ATTENZIONE ELEMENTO PRESENTE";
     } else {
+      console.log("PRE push", colori);
       colori.push(coloreUtente);
+      console.log("POST push", colori);
       for (let i = 0; i < colori.length; i++) {
         const colore = colori[i];
         listaItems += `<li>${colore}</li>`;
-        p.innerText = `Risultati trovati: ${colori.length}`
+        p.innerText = `Risultati trovati: ${colori.length}`;
       }
     }
 
     isPresente = false;
     lista.innerHTML = listaItems;
   } else {
-    p.innerText = 'ERRORE DI VALIDAZIONE'
+    p.innerText = "ERRORE DI VALIDAZIONE";
   }
 });
