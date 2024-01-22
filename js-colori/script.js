@@ -22,7 +22,6 @@ let listaItems = "";
 // * AL click del btn verificare se il colore è presente nell'array:
 btn.addEventListener("click", function () {
   listaItems = "";
-  p.innerText = "";
 
   const coloreUtente = coloreInput.value.trim();
 
@@ -45,6 +44,7 @@ btn.addEventListener("click", function () {
       for (let i = 0; i < colori.length; i++) {
         const colore = colori[i];
         listaItems += `<li>${colore}</li>`;
+        p.innerText = `Risultati trovati: ${colori.length}`
       }
     }
 
